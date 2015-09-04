@@ -1,0 +1,105 @@
+package rock2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class testRock2 {
+
+	public static void main(String[] args){
+    
+	  String thePC;
+      String theHumanPlayer;
+      int pcValue;
+     
+      Scanner entry = new Scanner(System.in);
+      Random  generator = new Random();
+      System.out.println ("Please enter: Paper, Pencil, Rock or Scissors "); 
+      theHumanPlayer = entry.next();
+      
+      theHumanPlayer = theHumanPlayer.toUpperCase();
+      pcValue = generator.nextInt(4);
+      
+      switch(pcValue){
+                        case 0 :  {
+                        	        thePC = "Paper";
+                                    break;		
+               
+                                  }
+      
+                        case 1 :  {
+                        	        thePC = "Pencil";
+                                    break;		
+                                  } 
+
+                        case 2 :  {
+                        	        thePC = "Rock";
+                                    break;		
+                                  } 
+                                  
+                        case 3 :  {
+                        	        thePC = "Scissors";
+                                    break;		
+                                  } 
+
+                                   default: {
+                                	         thePC = "Never occurs";                        	  
+                                            }
+                                  
+                     }
+	
+      
+      System.out.println ("thePC plays: " + thePC);
+      
+      if (theHumanPlayer.equals(thePC))
+      { 
+          System.out.println("No one wins, it's a tie!");
+      }
+        
+      else if (theHumanPlayer.equals("Paper"))
+      {
+             if (thePC.equals("Rock"))
+             System.out.println("Paper ties around the Rock.  You win)))");
+               else if (thePC.equals("Pencil"))
+               System.out.println ("Pencil write on paper. You lose((( ");
+                  else if (thePC.equals("Scissors"))
+                  System.out.println ("Scissors cut the paper. You lose((( ");
+      
+      }
+      else if (theHumanPlayer.equals("Pencil"))
+      {
+             if (thePC.equals("Paper"))
+             System.out.println ("Pencil write on paper. You win))) ");
+               else if (thePC.equals("Scissors"))
+               System.out.println ("Scissors cat the pencil. You lose((( ");
+                   else if (thePC.equals("Rock"))
+                   System.out.println ("Rock smashes the pencil. You lose((( ");
+                 
+      }
+      else if (theHumanPlayer.equals("Rock"))
+      {
+    	  if (thePC.equals("pencil"))
+              System.out.println ("Rock smashes the pencil. You win))) ");
+                else if (thePC.equals("Paper"))
+                System.out.println ("Paper ties around the Rock. You lose((( ");
+                    else if (thePC.equals("Scissors"))
+                    System.out.println ("Rock smashes the Scissors. You win((( ");
+      }
+      else if (theHumanPlayer.equals("Scissors"))
+      {
+    	  if (thePC.equals("pencil"))
+              System.out.println ("Scissors cat the pencil. You win))) ");
+                else if (thePC.equals("Paper"))
+                System.out.println ("Scissors cut the paper. You win((( ");
+                    else if (thePC.equals("Scissors"))
+                    System.out.println ("Rock smashes the Scissors. You lose((( ");
+      }
+      else
+      {
+          System.out.println ("Invalid humans input.");
+      }
+       
+       
+  }
+	
+}
