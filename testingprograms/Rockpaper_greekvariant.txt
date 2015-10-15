@@ -8,7 +8,7 @@ public class testRock2 {
 
 	public static void main(String[] args){
     
-	  String thePC;
+      String thePC;
       String theHumanPlayer;
       int pcValue;
      
@@ -17,7 +17,7 @@ public class testRock2 {
       System.out.println ("Please enter: Paper, Pencil, Rock or Scissors "); 
       theHumanPlayer = entry.next();
       
-      theHumanPlayer = theHumanPlayer.toUpperCase();
+      
       pcValue = generator.nextInt(4);
       
       switch(pcValue){
